@@ -4,11 +4,12 @@ from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+
 def retornaSession():
     USUARIO = "root"
-    SENHA = ""
-    HOST = "localhost"
-    BANCO = "formula-one"
+    SENHA = "supermax"
+    HOST = "35.198.16.4"
+    BANCO = "formula_one"
     PORT = "3306"
 
     CON = f"mysql+pymysql://{USUARIO}:{SENHA}@{HOST}:{PORT}/{BANCO}"
@@ -19,15 +20,9 @@ def retornaSession():
 
 session = retornaSession()
 
-circuits = pd.read_csv('circuits.csv').split()
+lista = ['constructor_results', 'constructor_standings', 'constructors', 'driver_standings', 'pit_stops', 'qualifying', 'races', 'results', 'seasons', 'sprint_results', 'status', 'drivers']
 
-
-# try:
-#     for row in circuits:
-#         x = Circuits(row)
-#         session.add(x)
-#         session.commit()
-#         print("Executado")
-# except Exception as e:
-#     print(f'Ocorreu um erro: {e}')
+for i in lista:
+    df = pd.read_csv(f'csv\{i}.csv', index_col=0)
+    df.to_sql(f'{i}', CON)
 

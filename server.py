@@ -1,11 +1,14 @@
 from fastapi import FastAPI
-from csv.config import *
+from config import *
+import uvicorn
 
-from csv.config import Session
+
+from config import Session
   
 session = Session()
 app = FastAPI()
 
-@app.get('/')
-def home():
-    return session
+
+@app.get('/circuits')
+def Circuits():
+    return session.query(circuits).all().

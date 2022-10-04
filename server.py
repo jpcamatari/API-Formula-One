@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from config import *
 import uvicorn
 
-
+import model
 from config import Session
   
 session = Session()
@@ -16,4 +16,3 @@ def Circuits():
 @app.get('/drivers')
 def Drivers():
     return session.query(drivers).all()
-    

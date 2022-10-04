@@ -20,8 +20,3 @@ Base = declarative_base()
 
 Base.metadata.create_all(engine)
 
-x = requests.session()
-
-r = x.get('35.198.16.4')
-
-print(r)

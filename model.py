@@ -1,13 +1,10 @@
-from email.policy import default
-from re import X
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
+from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import requests
 
 USUARIO = "root"
-SENHA = "supermax"
-HOST = "35.198.16.4"
+SENHA = ""
+HOST = "localhost"
 BANCO = "formula_one"
 PORT = "3306"
 
@@ -17,6 +14,11 @@ engine = create_engine(CON, echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
+
+class Circuits(Base):
+    __tablename__ = "circuits"
+
+
 
 Base.metadata.create_all(engine)
 

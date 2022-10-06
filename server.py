@@ -1,21 +1,26 @@
-from model import CON
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from model import CON, ConstructorResults, ConstructorStandings, Constructors, session, Circuits, Drivers, Constructor
 from fastapi import FastAPI
-
-
-# def conectaBanco():
-#     engine = create_engine(CON, echo=True)
-#     Session = sessionmaker(bind=engine)
-#     session = Session()
-#     return session
-
-  
+ 
 app = FastAPI()
 
-@app.get("/")
-def root():
-    #return session.query(Circuits).all()
-    return {'ola':'mundo'}
+@app.get("/circuits")
+def allCircuits():
+    return session.query(Circuits).all()
+
+@app.get("/drivers")
+def allDrivers():
+    return session.query(Drivers).all()
+
+@app.get("/constructors")
+def allConstructor():
+    return session.query(Constructors).all()
+
+@app.get("/constructor-results")
+def allConstructor_results():
+    return session.query(ConstructorResults).all()
     
+@app.get("/constructor-standings")
+def allConstructor_standings():
+    return session.query(ConstructorStandings).all()
+
+

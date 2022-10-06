@@ -78,12 +78,12 @@ class DriverStandings(Base):
 class Races(Base):
     __tablename__ = "races"
     raceId = Column(Integer, primary_key=True)
-    year = Column(String(10))
+    year = Column(Integer)
     round = Column(Integer)
     circuitId = Column(Integer)
     name = Column(String(50))
-    data = Column(DateTime)
-    wins = Column(Integer)
+    data = Column(String(50))
+    time = Column(String(50))
 
 class PitStops(Base):
     __tablename__ = "pit_stops"
@@ -153,9 +153,7 @@ class SprintResults(Base):
     time = Column(String(50))
     milliseconds = Column(Integer)
     fastestLap = Column(Integer)
-    rank = Column(Integer)
     fastestLapTime = Column(String(50))
-    fastestLapSpeed = Column(String(50))
     statusId = Column(Integer)
 
 class Status(Base):

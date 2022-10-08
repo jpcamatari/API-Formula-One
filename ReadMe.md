@@ -3,6 +3,7 @@
 Projeto realizado em python e FastAPI, utlizando um banco de dados da formula 1.
 Nele podemos encontrar dados historicos de provas, vitorias, temporadas, pilotos etc.
 
+
 <h3>Endpoints</h3>
     **Circuits** - Contém todos os circuitos onde foram disputados prova.
     **Drivers** - Todos os pilotos que ja participaram de alguma etapa.

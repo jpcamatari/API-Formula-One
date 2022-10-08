@@ -5,7 +5,7 @@ Nele podemos encontrar dados historicos de provas, vitorias, temporadas, pilotos
 
 
 <h3>Endpoints</h3>
-    **Circuits** - Contém todos os circuitos onde foram disputados prova.
+    <b>Circuits</b> - Contém todos os circuitos onde foram disputados prova.
     **Drivers** - Todos os pilotos que ja participaram de alguma etapa.
     **Constructors** - Informações de todas as equipes da categoria.
     **ConstructorResults** - Pontos conquistados pela equipe por prova.

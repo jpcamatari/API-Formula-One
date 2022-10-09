@@ -1,8 +1,10 @@
 from model import session, LapTimes, PitStops, Qualifying, Results, SprintResults, Status, ConstructorResults, ConstructorStandings, Constructors, DriverStandings, Races, Circuits, Drivers
 from fastapi import FastAPI
- 
+
+#Criação da API
 app = FastAPI()
 
+#Referenciando todos os endpoints da API
 @app.get("/circuits")
 def allCircuits():
     return session.query(Circuits).all()
